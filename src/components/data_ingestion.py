@@ -1,11 +1,17 @@
 import os
 import sys
-from exception import CustomException
-from logger import logging
+from src.logger import logging
 import pandas as pd
-
-from sklearn.model_selection import train_test_split
+from src.exception import CustomException
 from dataclasses import dataclass
+
+
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransConfig
+
+from src.components.data_transformation import dataclass
+from sklearn.model_selection import train_test_split
+
 
 @dataclass
 class Dataingestionconfig:
@@ -19,7 +25,7 @@ class DataIngestion:
         logging.info('Entered the data ingestion method or component')
 
         try:
-            salary =pd.read_csv('datafiles\final_salary_prediction_data.csv')
+            salary = pd.read_csv('data\data_final.csv')
             logging.info('Read the data as a Dataframe')
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
@@ -42,4 +48,9 @@ class DataIngestion:
 if __name__ == '__main__':
 
     di = DataIngestion()
-    di.initiate_data_ingestion()
+    salary_train_data,salary_test_data = di.initiate_data_ingestion()
+
+    data_trans = DataTransformation()
+    data_trans.initiate_datatrans(salary_train_data,salary_test_data)
+
+
