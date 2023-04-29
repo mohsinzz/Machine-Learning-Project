@@ -9,6 +9,9 @@ from dataclasses import dataclass
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransConfig
 
+from src.components.model_trainer import ModelTrainerConfig
+from src.components.model_trainer import ModelTrainer
+
 from src.components.data_transformation import dataclass
 from sklearn.model_selection import train_test_split
 
@@ -50,7 +53,14 @@ if __name__ == '__main__':
     di = DataIngestion()
     salary_train_data,salary_test_data = di.initiate_data_ingestion()
 
-    data_trans = DataTransformation()
-    data_trans.initiate_datatrans(salary_train_data,salary_test_data)
+    dt = DataTransformation()
+    train_arr,test_arr,preprocessor_path = dt.initiate_datatrans(salary_train_data,salary_test_data)
+
+    mt= ModelTrainer()
+    best_model,best_score = mt.initiate_model_training(train_arr,test_arr)
+
+    print(best_model,best_score)
+
+
 
 
