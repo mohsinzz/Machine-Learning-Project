@@ -94,7 +94,9 @@ class ModelTrainer:
             save_object(file_path=self.model_config.model_trainer_file_path,obj= best_model)
 
             return (best_model_name,best_model_score)
+
         except Exception as e:
+            
             raise CustomException(e,sys)
         
 
