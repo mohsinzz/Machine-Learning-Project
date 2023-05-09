@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- {{ url_for('static', filename='displaystyle.css') }} -->
+        <link rel="stylesheet"  href="{{ url_for('static', filename='displaystyle.css') }}">
+    </head>
+    <body>
+        <div class="display-box">
+            <div class ='display-text'>
+                YOUR PREDICTED SALARY PACKAGE IS
+            </div>
+            <div class ='salary-display'>
+                <!-- {{results}} -->
+                {{results}}
+            </div>
+        </div>
+        
+    </body>
+</html>

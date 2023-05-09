@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='salarystyle.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dropdown.css') }}">
+
+
+    </head>
+    <body >
+    <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <div class ='dropdown-frame'>
+            <div class="div-heading" style="margin-left: 5px"> DETAILS</div>
+            <div class="dropdown">
+                <div class="dropdown-guide">GENDER</div>
+            <select class="dropdown-feature" name="Gender" placeholder="SELECT YOUR GENDER" required>
+                <option class="placeholder" selected disabled value="" >
+                    <div style="font-size:8px;">
+                    NO SELECTION
+                    </div>
+                  </option>
+                <option class='option-values' value="m">
+                    MALE
+                </option>
+                <option class='option-values' value="f">
+                    FEMALE
+                </option>
+           
+            </select>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-guide">YEAR OF BIRTH</div>
+            <select class="dropdown-feature" name="Year_of_birth" placeholder="SELECT YOUR DATE OF BIRTH" required>
+                <option class="placeholder" selected disabled value="">NO SELECTION</option>
+                <option class='option-values' value="1995">
+                    1995
+                </option>
+                <option class='option-values' value="1996">
+                    1996
+                </option>
+                <option class='option-values' value="1997">
+                    1997
+                </option>
+                <option class='option-values' value="1998">
+                    1998
+                </option>
+                <option class='option-values' value="1999">
+                    1999
+                </option>
+                <option class='option-values' value="2000">
+                    2000
+                </option>
+                <option class='option-values' value="2001">
+                    2001
+                </option>
+                <option class='option-values' value="2002">
+                    2002
+                </option>
+                <option class='option-values' value="2003">
+                    2003
+                </option>
+                <option class='option-values' value="2004">
+                    2004
+                </option>
+                <option class='option-values' value="2005">
+                    2005
+                </option>
+
+            </select>
+
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-guide">HIGHEST/QUALIFICATION</div>
+            <select class="dropdown-feature" name="Degree" placeholder="SELECT YOUR HIGHEST/QUAL" required>
+                <option class="placeholder" selected disabled value="">NO SELECTION</option>
+                <option class='option-values' value="B.Tech/B.E.">
+                    B.TECH/B.E
+                </option>
+                <option class='option-values' value="M.Tech./M.E.">
+                    M.TECH/M.E
+                </option>
+                <option class='option-values' value="MCA">
+                    MCA
+                </option>
+                <option class='option-values' value="M.Sc. (Tech.)">
+                    M.SC/M.TECH
+                </option>
+            </select>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-guide">SPECIALIZATION</div>
+            <select class="dropdown-feature" name="Specialization" placeholder="SELECT YOUR SPECIALIZATION" required>
+                <option class="placeholder" selected disabled value="">NO SELECTION</option>
+                <option class='option-values' value="electronics and communication engineering">
+                    ELECTRONICS AND COMMUNICATION ENGG.
+                </option>
+                <option class='option-values' value="computer science & engineering">
+                    COMPUTER SCIENCE ENGG.
+                </option>
+                <option class='option-values' value="information technology">
+                    INFORMATION TECHNOLOGY
+                </option>
+                <option class='option-values' value="computer engineering">
+                    COMPUTER ENGG.
+                </option>
+                <option class='option-values' value="computer application">
+                    COMPUTER APPLICATIONS
+                </option>
+                <option class='option-values' value="mechanical engineering">
+                    MECHANICAL ENGG
+                </option>
+                <option class='option-values' value="electronics and electrical engineering">
+                    ELECTRONICS AND ELECTRICAL ENGG.
+                </option>
+                <option class='option-values' value="electronics & telecommunications">
+                    ELECTRONICS AND TELECOMMUNICATIONS ENGG.
+                </option>
+                <option class='option-values' value="electrical engineering">
+                    ELECTRICAL ENGG.
+                </option>
+                <option class='option-values' value="electronics & instrumentation eng">
+                    ELECTRONICS AND INSTRUMENTATION ENGG.
+                </option>
+                <option class='option-values' value="electronics and instrumentation engineering">
+                    ELECTRONICS AND INSTRUMENTATION ENGG.
+                </option>
+                <option class='option-values' value="instrumentation and control engineering">
+                    ISTRUMENTATION AND CONTROL ENGG.
+                </option>
+                <option class='option-values' value="information science engineering">
+                    INFORMATION SCIENCE-ENGG.
+                </option>
+                <option class='option-values' value="civil engineering">
+                    CIVIL ENGG.
+                </option>
+                <option class='option-values' value="electronics engineering">
+                    ELECTRONICS ENGG.
+                </option>
+                <option class='option-values' value="biotechnology">
+                    BIOTECHNOLOGY
+                </option>
+                <option class='option-values' value="Other">
+                    OTHER
+                </option>
+            </select>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-guide">YEAR OF GRADUATION</div>
+            <select class="dropdown-feature" name="GraduationYear" placeholder="SELECT YOUR GRAD YEAR" required>
+                <option class="placeholder" selected disabled value="">NO SELECTION</option>
+                <option class='option-values' value="2022">
+                    2022
+                </option>
+                <option class='option-values' value="2023">
+                    2023
+                </option>
+                <option class='option-values' value="2024">
+                    2024
+                </option>
+                
+
+           
+            </select>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-guide">COLLEGE TIER</div>
+            <select class="dropdown-feature" name="CollegeTier" placeholder="SELECT YOUR COLLEGE TIER" required>
+                <option class="placeholder" selected disabled value="">NO SELECTION</option>
+                <option class='option-values' value="1">
+                    TIER 1
+                </option>
+                <option class='option-values' value="2">
+                    TIER 2
+                </option>
+                
+            </select>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-guide">COLLEGE CITY TIER</div>
+            <select class="dropdown-feature" name="CollegeCityTier" placeholder="SELECT YOUR COLLEGE CITY TIER" required>
+                <option class="placeholder" selected disabled value="">NO SELECTION</option>
+                <option class='option-values' value="1">
+                    TIER 1
+                </option>
+                <option class='option-values' value="0">
+                    OTHER
+                </option>
+                
+            </select>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-guide">COLLEGE CATEGORY</div>
+            <select class="dropdown-feature" name="CollegeCategory" placeholder="SELECT YOUR COLLEGE CATEGORY" required>
+                <option class="placeholder" selected disabled value="">NO SELECTION</option>
+                <option class='option-values' value="IITs">
+                    AMONGST IITs
+                </option>
+                <option class='option-values' value="NITs">
+                    AMONGST NITs/IIITs
+                </option>
+                <option class='option-values' value="TOP5">
+                    AMONGST TOP-5 IN TIER 1 CITY
+                </option>
+                <option class='option-values' value="o">
+                    OTHER
+                </option>
+                
+            </select>
+            </div>
+        </div>
+        <div class="slider-attributes">
+            <div class="div-heading">ACADEMIC DETAILS</div>
+            <div class="slider-input">
+                <div class ='slider-feature'>Xth PERCENTAGE</div>
+                <div class = 'slider-ranger'>
+                    <input type="range" min="0" max="100" value="50"  step ='0.1'
+                    class="slider" id="10thpercent" name="10thpercent">
+                    <div class="slider-limit1">0</div>
+                    <div class="slider-limit2">100</div>
+                </div>
+                    
+            
+                <div class="slider-output"><span id="10thpercent-show"></span>
+                    <script>
+                    var slider = document.getElementById("10thpercent");
+                    var output0 = document.getElementById("10thpercent-show");
+                    output0.innerHTML = slider.value;
+                    
+                    
+                    slider.oninput = function() {
+                    output0.innerHTML = this.value ;
+                    }
+                    </script>
+                </div>
+                
+            </div>
+            <div class="slider-input">
+                <div class ='slider-feature'>
+                    XIIth PERCENTAGE
+                </div>
+                <div class = 'slider-ranger'>
+                    <input type="range" min="0" max="100" value="50"  step ='0.1'
+                    class="slider" id="12thpercent" name="12thpercent">
+                    <div class="slider-limit1">0</div>
+                    <div class="slider-limit2">100</div>
+                </div>
+                <div class="slider-output"><span id="12thpercent-show"></span></div>
+                <script >
+                    var slider = document.getElementById("12thpercent");
+                    var output01 = document.getElementById("12thpercent-show");
+                    output01.innerHTML = slider.value;
+                        
+                    slider.oninput = function() {
+                        output01.innerHTML = this.value ;
+                    }
+                </script>
+            </div>
+            <div class="slider-input">
+                <div class ='slider-feature'>
+                        LATEST DEGREE PERCENTAGE   
+                </div>
+                <div class = 'slider-ranger'>
+                    <input type="range" min="0" max="100" value="50"  step ='0.1'
+                    class="slider" id="Gradpercent" name="Gradpercent">
+                    <div class="slider-limit1">0</div>
+                    <div class="slider-limit2">100</div>
+                </div>
+                <div class="slider-output"><span id="Gradpercent-show"></span></div>
+                <script >
+                    var slider = document.getElementById("Gradpercent");
+                    var output2 = document.getElementById("Gradpercent-show");
+                    output2.innerHTML = slider.value;
+                        
+                    slider.oninput = function() {
+                        output2.innerHTML = this.value ;
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="slider-attributes">
+            <div class="div-heading">APTITUDE</div>
+            <div class="student-guide">KINDLY RATE YOUR SELF ON THE GIVEN BELOW APTITUDE PARAMETERS ON A SCALE OF 0 to 10</div>
+            <div class="slider-input">
+                <div class ='slider-feature'>VERBAL ABILITY</div>
+                <div class = 'slider-ranger'>
+                    <input type="range"  id="verbal" name="Verbal" min="0" max="10" value="5" step ='0.1'
+                    class="slider">
+                    <div class="slider-limit1">0</div>
+                    <div class="slider-limit2">10</div>
+                </div>
+                    
+            
+                <div class="slider-output"><span id="verbal-show"></span>
+                    <script>
+                    var slider = document.getElementById("verbal");
+                    var output3 = document.getElementById("verbal-show");
+                    output3.innerHTML = slider.value;
+                    
+                    slider.oninput = function() {
+                    output3.innerHTML = this.value ;
+                    }
+                    </script>
+                </div>
+                
+            </div>
+            <div class="slider-input">
+                <div class ='slider-feature'>
+                    LOGICAL REASONING
+                </div>
+                <div class = 'slider-ranger'>
+                    <input type="range" min="0" max="10" value="5"  step ='0.1'
+                    class="slider" id="logical" name="Logical">
+                    <div class="slider-limit1">0</div>
+                    <div class="slider-limit2">10</div>
+                </div>
+                <div class="slider-output"><span id="logical-show"></span></div>
+                <script >
+                    var slider = document.getElementById("logical");
+                    var output4 = document.getElementById("logical-show");
+                    output4.innerHTML = slider.value;
+                        
+                    slider.oninput = function() {
+                        output4.innerHTML = this.value ;
+                    }
+                </script>
+            </div>
+        
+        
+            <div class="slider-input">
+                <div class ='slider-feature'>
+                        QUANTS 
+                </div>
+                <div class = 'slider-ranger'>
+                    <input type="range" min="0" max="10" value="5"  step ='0.1'
+                    class="slider" id="Quant" name="Quants">
+                    <div class="slider-limit1">0</div>
+                    <div class="slider-limit2">10</div>
+                </div>
+                <div class="slider-output"><span id="Quant-show"></span></div>
+                <script >
+                    var slider = document.getElementById("Quant");
+                    var output5 = document.getElementById("Quant-show");
+                    output5.innerHTML = slider.value;
+                        
+                    slider.oninput = function() {
+                        output5.innerHTML = this.value ;
+                    }
+                </script>
+            </div>
+        </div>
+        
+        <div class="slider-attributes">
+            <div class="div-heading">PERSONALITY TRAITS</div>
+            <div class="student-guide">KINDLY RATE YOUR SELF ON THE GIVEN BELOW PERSONALITY TRAITS ON A SCALE OF 0 to 10</div>
+            <div class="student-guide" style="text-align: left;margin-top: 10px;">
+                <p>CONSCIENTIOUSNESS - QUALITY TO A DO TASK WELL AND THOROUGHLY</p>
+                <p>EXTRAVERSION - THE QUALITY OF BEING OUTGOING AND SOCIALLY CONFIDENT</p>
+                <p>NEUROTICISM - A LOW NEUROTICISM RATING INDICATES A GOOD EMOTIONAL/MENTAL STRENGTH </p>
+            </div>
+            <div class="slider-input">
+                <div class ='slider-feature' >CONSCIENTIOUS NESS</div>
+                <div class = 'slider-ranger'>
+                    <input type="range" min="0" max="10" value="5" step ='0.1'
+                    class="slider" id="Conscientiousness" name="Conscientious">
+                    <div class="slider-limit1">0</div>
+                    <div class="slider-limit2">10</div>
+                </div>
+                    
+            
+                <div class="slider-output"><span id="Conscientiousness-show"></span>
+                    <script>
+                    var slider = document.getElementById("Conscientiousness");
+                    var output6 = document.getElementById("Conscientiousness-show");
+                    output6.innerHTML = slider.value;
+                    
+                    slider.oninput = function() {
+                    output6.innerHTML = this.value ;
+                    }
+                    </script>
+                </div>
+                
+            </div>
+            <div class="slider-input">
+                <div class ='slider-feature'>
+                    AGREEABLENESS
+                </div>
+                <div class = 'slider-ranger'>
+                    <input type="range" min="0" max="10" value="5"  step ='0.1'
+                    class="slider" id="Agreeableness" name="Agreeable">
+                    <div class="slider-limit1">0</div>
+                    <div class="slider-limit2">10</div>
+                </div>
+                <div class="slider-output"><span id="Agreeableness-show"></span></div>
+                <script >
+                    var slider = document.getElementById("Agreeableness");
+                    var output7 = document.getElementById("Agreeableness-show");
+                    output7.innerHTML = slider.value;
+                            
+                    slider.oninput = function() {
+                        output7.innerHTML = this.value ;
+                    }
+                </script>
+            </div>
+        
+        
+            <div class="slider-input">
+                <div class ='slider-feature'>
+                    EXTRAVERSION
+                </div>
+                <div class = 'slider-ranger'>
+                    <input type="range" min="0" max="10" value="5"  step ='0.1'
+                    class="slider" id="Extraversion" name="Extraversion">
+                    <div class="slider-limit1">0</div>
+                    <div class="slider-limit2">10</div>
+                </div>
+                <div class="slider-output"><span id="Extraversion-show"></span></div>
+                <script >
+                    var slider = document.getElementById("Extraversion");
+                    var output8 = document.getElementById("Extraversion-show");
+                    output8.innerHTML = slider.value;
+                        
+                    slider.oninput = function() {
+                        output8.innerHTML = this.value ;
+                    }
+                </script>
+            </div>
+            <div class="slider-input">
+                <div class ='slider-feature'>
+                    NEUROTICISM 
+                </div>
+                <div class = 'slider-ranger'>
+                    <input type="range" min="0" max="10" value="5"  step ='0.1'
+                    class="slider" id="Neuroticism" name="Neurotic">
+                    <div class="slider-limit1">0</div>
+                    <div class="slider-limit2">10</div>
+                </div>
+                <div class="slider-output"><span id="Neuroticism-show"></span></div>
+                <script >
+                    var slider = document.getElementById("Neuroticism");
+                    var output9 = document.getElementById("Neuroticism-show");
+                    output9.innerHTML = slider.value;
+                        
+                    slider.oninput = function() {
+                        output9.innerHTML = this.value ;
+                    }
+                </script>
+            </div>
+        </div> 
+        <div class="slider-attributes">
+            <div class="div-heading">DOMAIN KNOWLEDGE</div>
+            <div class="student-guide">ON A SCALE OF 0 TO 10,HOW MUCH DO YOU RATE YOURSELF W.R.T. YOUR SPECIALIZATION?</div>
+            <div class="slider-input">
+                
+                <div class = 'slider-ranger'>
+                    <input type="range" min="0" max="10" value="5" step ='0.1'
+                    class="slider" id="Domain" name="Domain">
+                    <div class="slider-limit1">0</div>
+                    <div class="slider-limit2">10</div>
+                </div>
+                    
+            
+                <div class="slider-output"><span id="Domain-show"></span>
+                    <script>
+                    var slider = document.getElementById("Domain");
+                    var output10 = document.getElementById("Domain-show");
+                    output10.innerHTML = slider.value;
+                    
+                    slider.oninput = function() {
+                    output10.innerHTML = this.value ;
+                    }
+                    </script>
+                </div>
+                
+            </div>
+        </div>
+        <div class="slider-attributes">
+            <div class="div-heading">OPENNESS TO EXPERIENCE</div>
+            <div class="student-guide">HOW PASSIONATE AND KEEN ARE YOU TOWARDS LEARNING NEW THINGS?</div>
+            <div class="slider-input">
+                
+                <div class = 'slider-ranger'>
+                    <input type="range" min="0" max="10" value="5" step ='0.1'
+                    class="slider" id="openness_to_experience" name="openness_to_experience">
+                    <div class="slider-limit1">0</div>
+                    <div class="slider-limit2">10</div>
+                </div>
+                    
+            
+                <div class="slider-output"><span id="openness_to_experience-show"></span>
+                    <script>
+                    var slider = document.getElementById("openness_to_experience");
+                    var output11 = document.getElementById("openness_to_experience-show");
+                    output11.innerHTML = slider.value;
+                    
+                    slider.oninput = function() {
+                    output11.innerHTML = this.value ;
+                    }
+                    </script>
+                </div>
+                
+            </div>
+        </div>
+        <div class="submit-button">
+            <input class="submit-btn" type="submit" value="PREDICT SALARY" required />
+        </div>
+    </form> 
+      
+    </body>
+</html>
