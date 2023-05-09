@@ -8,7 +8,7 @@ from src.utils import load_object
 class predict_pipeline:
     def __init__(self):
         pass
-    def predict(self,features):
+    def prediction(self,features):
         try:
             modeltrainer_path = 'artifacts/modeltrainer.pkl'
             preprocessor_path = 'artifacts/preprocessor.pkl'
