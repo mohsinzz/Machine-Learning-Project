@@ -26,8 +26,8 @@ def predict_datapoint():
 
                             CollegeGPA =float(request.form.get('Gradpercent')), 
 
-                            personality_score=float((float(request.form.get('Conscientiousness'))+float(request.form.get('Agreeableness'))
-                                                  +float(request.form.get('Extraversion'))+float(10)-float(request.form.get('Neuroticism')))/4),
+                            personality_score=float((float(request.form.get('Conscientious'))+float(request.form.get('Agreeable'))
+                                                  +float(request.form.get('Extraversion'))+float(10)-float(request.form.get('Neurotic')))/4),
 
                             aptitude_score=float((float(request.form.get('Quants'))+float(request.form.get('Verbal'))
                                                   +float(request.form.get('Logical')))/3),
@@ -51,7 +51,28 @@ def predict_datapoint():
         
         salary_pred_input_df= data.get_dataframe()
         predicted_salary = predict_pipeline().prediction(salary_pred_input_df)
-        return render_template('salary.html',results=predicted_salary)
+        x=predicted_salary[0]
+        if x<250000:
+            x= 250000
+        elif x<=600000:
+            x=1.15*x
+        elif x<=1000000:
+            x=1.2*x
+        else:
+            x=1500000
+
+        college_category=request.form.get('CollegeCategory')
+        if college_category=='IITs':
+            x=round(2*x/100000,1)
+        elif college_category=='NITs':
+            x=round(1.25*x/100000,1)
+        elif college_category=='TOP5':
+            x=round(1.2*x/100000,1)
+        else:
+            x=round(x/100000,1)
+        
+
+        return render_template('salarydisplay.html',results=str(x) + str(' LPA'))
     
 if __name__=='__main__':
     app.run(host='0.0.0.0')
