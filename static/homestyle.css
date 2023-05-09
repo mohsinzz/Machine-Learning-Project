@@ -1,0 +1,148 @@
+.home-header{
+    background-color: rgb(66, 167, 201);
+    color: white;
+    border-radius: 3px;
+    font-size: 14px;
+    width :100%;
+    text-align:center;
+    font-family: sans-serif;
+    height: 50px;
+    font-weight :700;
+    margin-top:0;
+    transition: padding 0.25s;
+    position: fixed;
+    
+    
+  }
+  .home-header:hover{
+    padding-bottom :10px;
+  }
+    
+
+.home{
+    display:flex;
+    flex-direction: column;
+    
+    width: 700px;
+    margin:auto;
+    border-width: 1px;
+    border-top: white;
+    border-left:white;
+    font-weight: 700;
+   
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom :10px;
+    border-radius:10px;
+    font-family: sans-serif;
+    align-items: center;
+    transition: box-shadow 0.25s;
+  }
+.home:hover{
+background-color:rgba(223, 255, 225, 0.479);
+box-shadow: 1px 1px 1px 1px  rgba(70, 70, 70,0.5);
+}
+.salary-image{
+    margin-bottom :10px;
+    margin-top:10px;
+    width: 500px; /* set the width of the container */
+    height: 320px; /* set the height of the container */
+    overflow: hidden;
+    position:relative;
+
+}
+.salary-image img{
+    width: 100%; /* set the width of the image to 100% of the container */
+    height: 100%; /* set the height of the image to auto to maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 10px;
+}
+.salary-image .tooltiptext{
+  position:absolute;
+  width:180px;
+  height:120px;
+  background-color: rgb(66, 167, 201);
+  color: white;
+  border-radius: 3px;
+  font-size: 14px;
+  text-align:center;
+  font-family: sans-serif;
+  height: 50px;
+  font-weight :700;
+  margin-top:0;
+  opacity:0;
+  z-index:index 2;
+  transition: padding 0.25s,opacity 0.25s,content 0.7s;
+
+  top: 10px;
+  right:10px;
+}
+.salary-image:hover .salary-img{
+  content: url('salary3idiots.jpg');
+  border-radius:10px;
+  
+}    
+.salary-image:hover .tooltiptext{
+  padding:5px;
+  opacity :1;
+  z-index:index 3;
+  
+} 
+
+.salary-image:active .salary-img{
+  content: url('salary3idiots.jpg');
+  border-radius:10px;
+}    
+.salary-image:active .tooltiptext{
+  padding:5px;
+  opacity :1;
+  z-index:index 3;
+} 
+  
+
+.home-title{
+    background-color: rgb(66, 167, 201);
+    color: white;
+    border-radius: 3px;
+    font-size: 14px;
+    width :400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left:10px;
+    padding-top:2px;
+    padding-bottom:2px;
+    transition:width 0.35s,background-color 0.35s,padding 0.35s;
+    margin-bottom: 10px;
+    height:50px;
+  }
+  .home-title:hover{
+    width :100%;
+    background-color:rgb(0, 135, 180);
+    padding:5px;
+  }
+  
+  
+  .submit-btn{
+    width:300px;
+    font-size:14px;
+    font-family: sans-serif;
+    font-weight: 700;
+    border-color: rgb(66, 167, 201);
+    background-color: rgb(66, 167, 201);
+    color:white;
+    height: 50px;
+    border-radius:3px;
+    transition: padding 0.25s,background-color 0.25s,color 0.25s,flex 0.25s;
+  }
+  .submit-btn:hover{
+    padding:5px;
+    background-color: white;
+    color:rgb(66, 167, 201);
+    cursor: pointer;
+  }
+  .submit-btn:active{
+    flex:1;
+  }
+
