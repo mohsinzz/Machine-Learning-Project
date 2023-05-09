@@ -3,13 +3,12 @@ import sys
 from src.logger import logging
 import pandas as pd
 from src.exception import CustomException
-from dataclasses import dataclass
 from src.utils import load_object
 
 class predict_pipeline:
     def __init__(self):
         pass
-    def prediction(features):
+    def predict(self,features):
         try:
             modeltrainer_path = 'artifacts/modeltrainer.pkl'
             preprocessor_path = 'artifacts/preprocessor.pkl'
@@ -17,9 +16,9 @@ class predict_pipeline:
             preprocessor = load_object(file_path=preprocessor_path)
 
             transformed_data = preprocessor.transform(features)
-            predicted_salary = model.predict(transformed_data)
+            predicted_sal= model.predict(transformed_data)
 
-            return predicted_salary
+            return predicted_sal
 
         except Exception as e:
             raise CustomException(e,sys)

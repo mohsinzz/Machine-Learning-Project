@@ -59,8 +59,8 @@ class ModelTrainer:
                         'n_estimators': [8,16,32,64]
                     },
                     "Gradient Boosting":{
-                        #'loss':['squared_error', 'huber', 'absolute_error', 'quantile'],
-                        'learning_rate':[.1,.01,.05,.001],
+                        'loss':['squared_error','absolute_error'],
+                        'learning_rate':[.1,.01,0.2,.05,.001],
                         'subsample':[0.8,0.85,0.9],
                         'criterion':['squared_error', 'friedman_mse'],
                         'max_features':['sqrt','log2'],
@@ -68,13 +68,13 @@ class ModelTrainer:
                     },
                     "Linear Regression":{},
                     "XGBRegressor":{'booster':['gblinear'],
-                        'learning_rate':[.1,.01,.05,.001],
+                        'learning_rate':[.1,.01,0.2,.05,.001],
                         'n_estimators': [8,16,32,64,100]
                     },
                     
                     "AdaBoost Regressor":{
-                        'learning_rate':[.1,0.5],
-                        # 'loss':['linear','square','exponential'],
+                        'learning_rate':[.1,0.2,0.3,0.5],
+                        'loss':['exponential'],
                         'n_estimators': [8,16,32,64]
                     }
                     
@@ -94,7 +94,6 @@ class ModelTrainer:
             save_object(file_path=self.model_config.model_trainer_file_path,obj= best_model)
 
             return (best_model_name,best_model_score)
-
         except Exception as e:
             
             raise CustomException(e,sys)
