@@ -12,3 +12,7 @@ The students/graduates are asked to provide some details and rate themselves on 
 THE REAL WORLD DATA WAS COLLECTED FROM KAGGLE.
 
 LINK FOR THE DATA : https://www.kaggle.com/manishkc06/engineering-graduate-salary-prediction
+
+# APP LINK
+PREDICT YOUR SALARY BY CLICKING ON THIS LINK : AVAILABLE SOON
+
