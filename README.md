@@ -4,9 +4,10 @@ After graduation which person is not being asked the following question : " Kitn
 
 # HOW DOES THE PREDICTION HAPPEN?
 The students/graduates are asked to provide some details and rate themselves on some attributes and post submission of these details their salary package is predicted.
-The initial data was collected from kaggle, which already had the actual salary values of graduates. The data was further cleaned on excel and python and was later preprocessed using python.
-Different ML models were trained on this preprocessed data.The Random Forest Regressor turned out to be the most efficient. 
 
 # PROJECT STRUCTURE
 ![image](https://github.com/mohsinzz/Machine-Learning-Project/assets/64487915/711db48f-f88a-461c-aede-da9eb05f02f1)
 
+# DATA SOURCE
+THE REAL WORLD DATA WAS COLLECTED FROM KAGGLE.
+LINK FOR THE DATA : https://www.kaggle.com/manishkc06/engineering-graduate-salary-prediction
