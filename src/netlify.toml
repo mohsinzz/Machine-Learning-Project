@@ -1,3 +1,10 @@
+[build.environment]
+  PYTHON_VERSION = "3.8"
+  FLASK_ENV = "production"
+
+[dev]
+  command = "python app.py runserver"
+
 [[redirects]]
 from = "/*"
 to = "index.html"
