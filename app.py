@@ -15,7 +15,7 @@ def index():
     else:
         return render_template('salary.html')
 
-@app.route('/details',methods=['GET','POST'])
+@app.route('/',methods=['GET','POST'])
 def predict_datapoint():
     if request.method =='GET':
         return render_template('salary.html')
